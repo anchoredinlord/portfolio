@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Mail, GraduationCap, Briefcase, Heart, Zap } from "lucide-react";
-import { personalInfo, education, stats } from "@/lib/data";
+import { personalInfo, education, stats, assets } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
+import ProfileImage from "@/components/ui/ProfileImage";
 
 function StatCard({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   return (
@@ -14,7 +15,7 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
       viewport={{ once: true }}
       className="text-center p-4 rounded-2xl bg-violet-50 dark:bg-violet-900/20 border border-violet-100 dark:border-violet-800/30"
     >
-      <div className="text-3xl font-extrabold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+      <div className="text-3xl font-extrabold bg-linear-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
         {value}{suffix}
       </div>
       <div className="text-sm text-gray-700 dark:text-gray-300 mt-1 font-medium">{label}</div>
@@ -23,22 +24,22 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
 }
 
 const highlights = [
-  { icon: MapPin, label: "Location", value: personalInfo.location },
-  { icon: Mail, label: "Email", value: personalInfo.email },
+  { icon: MapPin,        label: "Location",  value: personalInfo.location },
+  { icon: Mail,          label: "Email",     value: personalInfo.email },
   { icon: GraduationCap, label: "Education", value: education[0].degree },
-  { icon: Briefcase, label: "Status", value: "Open to Opportunities" },
+  { icon: Briefcase,     label: "Status",    value: "Open to Opportunities" },
 ];
 
 const passions = [
-  { icon: Zap, text: "Building scalable web applications" },
-  { icon: Heart, text: "Open source contribution" },
+  { icon: Zap,           text: "Building scalable web applications" },
+  { icon: Heart,         text: "Open source contribution" },
   { icon: GraduationCap, text: "Continuous learning & growth" },
-  { icon: Briefcase, text: "Mentoring junior developers" },
+  { icon: Briefcase,     text: "Mentoring junior developers" },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white/60 dark:bg-slate-100/60 dark:bg-black/20 backdrop-blur-sm">
+    <section id="about" className="py-24 section-layer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="About Me"
@@ -47,7 +48,8 @@ export default function About() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left — Visual */}
+
+          {/* ── Left — original card layout ── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,30 +57,42 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            {/* Main card */}
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-violet-600 to-indigo-700 p-8 text-white shadow-2xl shadow-violet-500/20">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+            {/* Main gradient card */}
+            <div className="relative rounded-3xl overflow-hidden bg-linear-to-br from-violet-600 to-indigo-700 text-white shadow-2xl shadow-violet-500/20">
+              {/* ── Full-width about photo at the top ── */}
+              <div className="relative w-full h-56 overflow-hidden">
+                <ProfileImage
+                  src={assets.aboutPhoto}
+                  alt={`${personalInfo.name} — About`}
+                  size={600}
+                  className="w-full h-full object-cover object-top"
+                />
+                {/* gradient fade into the card below */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-t from-indigo-700 to-transparent" />
+              </div>
 
-              <div className="relative z-10">
-                <div className="w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center mb-6 text-3xl font-bold">
-                  {personalInfo.firstName[0]}{personalInfo.lastName[0]}
-                </div>
-                <h3 className="text-2xl font-bold mb-1">{personalInfo.name}</h3>
-                <p className="text-violet-200 mb-6">{personalInfo.title}</p>
+              {/* ── Card content below photo ── */}
+              <div className="relative p-8">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
-                <div className="space-y-3">
-                  {highlights.map(({ icon: Icon, label, value }) => (
-                    <div key={label} className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                        <Icon size={14} />
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold mb-1">{personalInfo.name}</h3>
+                  <p className="text-violet-200 mb-6">{personalInfo.title}</p>
+
+                  <div className="space-y-3">
+                    {highlights.map(({ icon: Icon, label, value }) => (
+                      <div key={label} className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+                          <Icon size={14} />
+                        </div>
+                        <div>
+                          <div className="text-xs text-violet-300">{label}</div>
+                          <div className="text-sm font-medium truncate max-w-[200px]">{value}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-xs text-violet-300">{label}</div>
-                        <div className="text-sm font-medium truncate max-w-[200px]">{value}</div>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,7 +105,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right — Text */}
+          {/* ── Right — text content ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -131,11 +145,13 @@ export default function About() {
 
             {/* Passions */}
             <div className="mt-6">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">What I&apos;m passionate about</h4>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                What I&apos;m passionate about
+              </h4>
               <div className="grid grid-cols-2 gap-3">
                 {passions.map(({ icon: Icon, text }) => (
                   <div key={text} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
-                    <Icon size={14} className="text-violet-500 flex-shrink-0" />
+                    <Icon size={14} className="text-violet-500 shrink-0" />
                     {text}
                   </div>
                 ))}
@@ -149,11 +165,12 @@ export default function About() {
               >
                 Get In Touch
               </Button>
-              <Button href={personalInfo.resumeUrl} variant="outline">
+              <Button href={assets.resume} variant="outline">
                 Download CV
               </Button>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

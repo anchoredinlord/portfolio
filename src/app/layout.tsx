@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { personalInfo } from "@/lib/data";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import GlobalBackground from "@/components/ui/GlobalBackground";
 
 const inter = Inter({
@@ -12,6 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://damozemotuma.vercel.app"
+  ),
   title: `${personalInfo.name} — Senior Software Engineer`,
   description: `${personalInfo.bio} Specializing in React, Next.js, Node.js, and PostgreSQL.`,
   keywords: [
@@ -79,11 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <body className="font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-        >
+        <ThemeProvider>
           <GlobalBackground />
           <div className="relative z-10">
             {children}

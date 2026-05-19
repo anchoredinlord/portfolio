@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun, Download } from "lucide-react";
-import { useTheme } from "next-themes";
-import { navLinks, personalInfo } from "@/lib/data";
+import { useTheme } from "@/components/providers/ThemeProvider";
+import { navLinks, personalInfo, assets } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
@@ -49,9 +49,12 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        // Always solid — no transparent phase ever
+        "bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl",
+        "border-b border-violet-200/60 dark:border-violet-900/50",
         scrolled
-          ? "bg-white/90 dark:bg-gray-950/80 backdrop-blur-xl border-b border-gray-200/80 dark:border-gray-800/50 shadow-sm"
-          : "bg-transparent"
+          ? "shadow-lg shadow-violet-500/10"
+          : "shadow-sm"
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,7 +105,7 @@ export default function Navbar() {
 
             {/* Resume Download */}
             <motion.a
-              href={personalInfo.resumeUrl}
+              href={assets.resume}
               download
               className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
               whileHover={{ scale: 1.02 }}
@@ -154,7 +157,7 @@ export default function Navbar() {
                 </motion.button>
               ))}
               <a
-                href={personalInfo.resumeUrl}
+                href={assets.resume}
                 download
                 className="flex items-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold mt-2"
               >

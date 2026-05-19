@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, ChevronDown, ChevronUp, Star } from "lucide-react";
+import { Github, ExternalLink, ChevronDown, ChevronUp, Star, Clock } from "lucide-react";
 import { projects } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
@@ -28,6 +28,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </div>
       )}
 
+      {/* Coming Soon badge */}
+      {"status" in project && project.status === "coming-soon" && (
+        <div className="absolute top-4 right-4 z-10 flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/90 text-white text-xs font-semibold">
+          <Clock size={10} />
+          Coming Soon
+        </div>
+      )}
+
       {/* Project image placeholder */}
       <div className="relative h-48 bg-gradient-to-br from-violet-900 via-indigo-900 to-gray-900 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
@@ -41,7 +49,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           animate={{ opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
-        {/* Hover overlay with links */}
+        {/* Hover overlay — hide links for coming-soon projects */}
+        {"status" in project && project.status === "coming-soon" ? (
+          <div className="absolute inset-0 bg-gray-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500/90 text-white text-sm font-semibold">
+              <Clock size={15} />
+              Project in progress — coming soon
+            </span>
+          </div>
+        ) : (
         <div className="absolute inset-0 bg-gray-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
           <motion.a
             href={project.github}
@@ -66,6 +82,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             Live Demo
           </motion.a>
         </div>
+        )}
       </div>
 
       {/* Content */}
@@ -185,7 +202,7 @@ export default function Projects() {
     : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-24 bg-white/60 dark:bg-slate-100/60 dark:bg-black/20 backdrop-blur-sm">
+    <section id="projects" className="py-24 section-layer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="My Work"
@@ -240,7 +257,7 @@ export default function Projects() {
             Want to see more? Check out my GitHub for all projects.
           </p>
           <motion.a
-            href="https://github.com/damozemotuma"
+            href="https://github.com/anchoredinlord"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold hover:border-violet-500 hover:text-violet-600 dark:hover:text-violet-400 transition-all"

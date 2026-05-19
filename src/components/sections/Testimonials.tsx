@@ -13,7 +13,7 @@ export default function Testimonials() {
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
   return (
-    <section id="testimonials" className="py-24 bg-white/60 dark:bg-slate-100/60 dark:bg-black/20 backdrop-blur-sm">
+    <section id="testimonials" className="py-24 section-layer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Testimonials"

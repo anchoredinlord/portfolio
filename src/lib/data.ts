@@ -2,6 +2,28 @@
 // PORTFOLIO DATA — Edit this file to personalize your portfolio
 // ============================================================
 
+// ── ASSETS ────────────────────────────────────────────────────
+// Drop your files into the /public folder then update paths here.
+//
+//  Photos  →  public/images/avatar.jpg        (hero circle photo)
+//             public/images/about.jpg         (about section photo)
+//  CV/Docs →  public/documents/resume.pdf     (downloadable CV)
+//
+// Supported image formats: .jpg .jpeg .png .webp .avif
+// ──────────────────────────────────────────────────────────────
+export const assets = {
+  // ── Profile photos ──
+  // Set to null to show the initials placeholder instead of a broken image
+  heroPhoto:  "/images/avatar.png",  // ← your hero photo
+  aboutPhoto: "/images/about.png",   // ← your about photo
+
+  // ── Documents ──
+  resume:     "/documents/resume.pdf", // ← your CV/Resume PDF
+
+  // ── OG / SEO image ──
+  ogImage:    "/images/og-image.jpg",  // ← 1200×630 social preview image
+};
+
 export const personalInfo = {
   name: "Damoze Motuma",
   firstName: "Damoze",
@@ -18,32 +40,33 @@ export const personalInfo = {
   phone: "094723693",
   location: "Ethiopia",
   bio: "I'm a passionate Senior Software Engineer with expertise in building scalable web applications and robust database systems. I love turning complex problems into elegant, user-friendly solutions.",
-  about: `I'm a Senior Software Engineer with a deep passion for software engineering and database systems. My journey started with curiosity about how things work under the hood — and that curiosity has never stopped driving me forward.
+  about: `I'm a young and passionate Senior Software Engineer based in Ethiopia, with a deep love for software engineering and database systems. My journey started with curiosity about how things work under the hood — and that curiosity has never stopped driving me forward.
 
-I specialize in building full-stack web applications using modern technologies like React, Next.js, Node.js, and PostgreSQL. I believe great software is not just about writing code — it's about crafting experiences that make people's lives easier.
+I am currently pursuing my Bachelor of Science in Software Engineering at Haramaya University (2024–2028). Alongside my studies, I have been building real-world full-stack applications using modern technologies like React, Next.js, Node.js, and PostgreSQL.
 
-I have competed in hackathons including the Cursor Hackathon, where I demonstrated my ability to build innovative solutions under pressure. When I'm not coding, I'm contributing to open-source projects, writing technical articles, or mentoring junior developers. I'm always looking for opportunities to grow, collaborate, and build something meaningful.`,
-  resumeUrl: "/resume.pdf",
-  avatarUrl: "/avatar.jpg",
-  github: "https://github.com/damozemotuma",
+I have competed in hackathons including the Cursor Hackathon, where I demonstrated my ability to build innovative solutions under pressure. All my professional experience has been gained right here in Ethiopia, working with local clients and contributing to the growing tech ecosystem. I'm always looking for opportunities to grow, collaborate, and build something meaningful.`,
+  // resumeUrl kept for backward compat — driven by assets.resume above
+  resumeUrl: "/documents/resume.pdf",
+  avatarUrl: "/images/avatar.png",
+  github: "https://github.com/anchoredinlord",
   linkedin: "https://linkedin.com/in/damozemotuma",
   twitter: "https://twitter.com/damozemotuma",
-  telegram: "https://t.me/damozemotuma",
-  whatsapp: "https://wa.me/94723693",
+  telegram: "https://t.me/AnchoredinLORD",
+  whatsapp: "https://wa.me/251947236930",
 };
 
 export const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    school: "University of Technology",
-    period: "2020 – 2024",
-    gpa: "3.8/4.0",
+    degree: "Bachelor of Science in Software Engineering",
+    school: "Haramaya University",
+    period: "2024 – 2028",
+    gpa: "",
     description:
-      "Focused on software engineering, database systems, and algorithms. Dean's List for 3 consecutive years.",
+      "Studying software engineering with focus on full-stack development, database systems, and algorithms at Haramaya University, Ethiopia.",
     achievements: [
-      "Dean's List — 3 consecutive years",
-      "Best Capstone Project Award",
-      "CS Department Scholarship",
+      "Software Engineering Student",
+      "Full-Stack Development Focus",
+      "Database Systems Specialization",
     ],
   },
 ];
@@ -83,6 +106,58 @@ export const skills = {
 
 export const projects = [
   {
+    id: 6,
+    title: "SaaS Platform",
+    description:
+      "A full-featured Software-as-a-Service platform with subscription billing, user onboarding, feature gating, analytics dashboard, and a self-service admin panel.",
+    longDescription:
+      "Production-grade SaaS boilerplate and platform covering the full lifecycle — from user signup and Stripe subscription billing to role-based feature access, usage analytics, and an admin control panel.",
+    image: "/projects/saas.jpg",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Prisma", "Tailwind CSS"],
+    github: "https://github.com/anchoredinlord/saas-platform",
+    demo: "https://saas-demo.vercel.app",
+    featured: true,
+    status: "coming-soon",
+    category: "Full-Stack",
+    challenges: [
+      "Designing a scalable subscription and billing architecture",
+      "Implementing feature gating per subscription tier",
+      "Building a real-time usage analytics pipeline",
+    ],
+    features: [
+      "Stripe subscription billing with webhooks",
+      "Role-based feature access per plan tier",
+      "Admin dashboard with user & revenue analytics",
+      "Self-service onboarding and settings",
+    ],
+  },
+  {
+    id: 7,
+    title: "Multi-Tenant Management System",
+    description:
+      "An enterprise-grade multi-tenant architecture where each tenant gets isolated data, custom branding, and independent user management — all on a single shared infrastructure.",
+    longDescription:
+      "Built a robust multi-tenancy system supporting hundreds of organizations on one platform. Each tenant has isolated PostgreSQL schemas, custom domain support, and independent admin controls.",
+    image: "/projects/multitenant.jpg",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "Redis", "Docker"],
+    github: "https://github.com/anchoredinlord/multi-tenant-system",
+    demo: "https://multitenant-demo.vercel.app",
+    featured: true,
+    status: "coming-soon",
+    category: "Full-Stack",
+    challenges: [
+      "Designing schema-per-tenant PostgreSQL isolation",
+      "Custom subdomain routing per tenant",
+      "Shared infrastructure with zero data leakage between tenants",
+    ],
+    features: [
+      "Schema-per-tenant database isolation",
+      "Custom subdomain and domain per tenant",
+      "Tenant-level admin and user management",
+      "Centralized super-admin dashboard",
+    ],
+  },
+  {
     id: 1,
     title: "Student Academic Record Management System",
     description:
@@ -91,7 +166,7 @@ export const projects = [
       "Built a production-grade academic management platform handling 10,000+ student records. Features include real-time grade tracking, automated report generation, attendance management, and a parent portal.",
     image: "/projects/academic.jpg",
     tags: ["React", "Node.js", "PostgreSQL", "Express", "JWT", "Tailwind CSS"],
-    github: "https://github.com/alexjohnson/academic-record-system",
+    github: "https://github.com/anchoredinlord/academic-record-system",
     demo: "https://academic-system-demo.vercel.app",
     featured: true,
     category: "Full-Stack",
@@ -116,7 +191,7 @@ export const projects = [
       "Full-featured e-commerce solution with Stripe payment integration, real-time inventory tracking, and a powerful admin dashboard. Handles thousands of concurrent users.",
     image: "/projects/ecommerce.jpg",
     tags: ["Next.js", "TypeScript", "MongoDB", "Stripe", "Tailwind CSS", "Redux"],
-    github: "https://github.com/alexjohnson/ecommerce-platform",
+    github: "https://github.com/anchoredinlord/ecommerce-platform",
     demo: "https://ecommerce-demo.vercel.app",
     featured: true,
     category: "Full-Stack",
@@ -141,7 +216,7 @@ export const projects = [
       "Trello-inspired task management app with real-time collaboration, custom workflows, and detailed productivity insights. Used by 500+ teams.",
     image: "/projects/taskmanager.jpg",
     tags: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "DnD"],
-    github: "https://github.com/alexjohnson/task-manager",
+    github: "https://github.com/anchoredinlord/task-manager",
     demo: "https://taskmanager-demo.vercel.app",
     featured: true,
     category: "Full-Stack",
@@ -166,7 +241,7 @@ export const projects = [
       "Professional database management interface supporting PostgreSQL and MySQL. Features visual schema designer, query builder, and performance monitoring.",
     image: "/projects/database.jpg",
     tags: ["React", "Node.js", "PostgreSQL", "MySQL", "Chart.js", "TypeScript"],
-    github: "https://github.com/alexjohnson/db-dashboard",
+    github: "https://github.com/anchoredinlord/db-dashboard",
     demo: "https://db-dashboard-demo.vercel.app",
     featured: false,
     category: "Database",
@@ -191,8 +266,8 @@ export const projects = [
       "A showcase of modern web development practices including server-side rendering, smooth animations, dark/light mode, and SEO optimization.",
     image: "/projects/portfolio.jpg",
     tags: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/alexjohnson/portfolio",
-    demo: "https://alexjohnson.dev",
+    github: "https://github.com/anchoredinlord/portfolio",
+    demo: "https://damozemotuma.dev",
     featured: false,
     category: "Frontend",
     challenges: [
@@ -213,15 +288,15 @@ export const experience = [
   {
     id: 1,
     role: "Senior Software Engineer",
-    company: "Self-Employed / Freelance",
-    period: "2022 – Present",
+    company: "Freelance — Ethiopia",
+    period: "2027 – Present",
     type: "Freelance",
     description:
-      "Delivering high-quality full-stack web applications for clients across multiple sectors. Managing full project lifecycle from requirements gathering to deployment and maintenance.",
+      "Delivering high-quality full-stack web applications for clients across Ethiopia. Managing full project lifecycle from requirements gathering to deployment and maintenance.",
     achievements: [
       "Delivered multiple projects with 100% client satisfaction",
       "Built scalable systems handling thousands of concurrent users",
-      "Established long-term relationships with recurring clients",
+      "Established long-term relationships with recurring Ethiopian clients",
     ],
     technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
   },
@@ -229,7 +304,7 @@ export const experience = [
     id: 2,
     role: "Hackathon Competitor",
     company: "Cursor Hackathon",
-    period: "2024",
+    period: "2026",
     type: "Achievement",
     description:
       "Participated in the Cursor Hackathon, competing against talented developers worldwide. Built an innovative software solution leveraging AI-assisted development tools under time pressure.",
@@ -243,28 +318,28 @@ export const experience = [
   {
     id: 3,
     role: "Full-Stack Developer",
-    company: "Various Projects",
-    period: "2021 – Present",
+    company: "Various Projects — Ethiopia",
+    period: "2026 – Present",
     type: "Internship",
     description:
-      "Designed and developed multiple full-stack applications including academic management systems, e-commerce platforms, and task management tools.",
+      "Designed and developed multiple full-stack applications for Ethiopian businesses including academic management systems, e-commerce platforms, and task management tools.",
     achievements: [
       "Built 25+ production-ready web applications",
       "Mastered modern full-stack technologies and best practices",
-      "Contributed to open-source projects and developer communities",
+      "Contributed to Ethiopia's growing software development community",
     ],
     technologies: ["React", "Next.js", "Node.js", "PostgreSQL", "MongoDB"],
   },
   {
     id: 4,
-    role: "Technical Mentor & Leader",
-    company: "Developer Community",
-    period: "2022 – Present",
+    role: "Technical Mentor and Leader",
+    company: "Developer Community — Ethiopia",
+    period: "2026 – Present",
     type: "Leadership",
     description:
-      "Actively mentoring junior developers, sharing knowledge through code reviews, technical discussions, and community contributions.",
+      "Actively mentoring junior developers in Ethiopia, sharing knowledge through code reviews, technical discussions, and community contributions.",
     achievements: [
-      "Mentored multiple junior developers",
+      "Mentored multiple junior developers in Ethiopia",
       "Shared technical knowledge through community engagement",
       "Promoted best practices in software engineering",
     ],
@@ -303,28 +378,28 @@ export const testimonials = [
   {
     id: 1,
     name: "Biruk Tadesse",
-    role: "CTO at Ethio Digital Solutions",
+    role: "CTO at Ethio Digital Solutions, Addis Ababa",
     avatar: "/testimonials/biruk.jpg",
     content:
-      "Damoze is one of the most talented engineers I've worked with. Their ability to understand complex requirements and deliver clean, scalable solutions is exceptional. A true asset to any team.",
+      "Damoze is one of the most talented young engineers I've worked with. His ability to understand complex requirements and deliver clean, scalable solutions is exceptional. A true asset to any team.",
     rating: 5,
   },
   {
     id: 2,
     name: "Selam Haile",
-    role: "Freelance Client — E-Commerce Project",
+    role: "Freelance Client — E-Commerce Project, Ethiopia",
     avatar: "/testimonials/selam.jpg",
     content:
-      "Damoze built our entire e-commerce platform from scratch in 6 weeks. The quality of the code, the attention to detail, and the communication throughout the project were outstanding.",
+      "Damoze built our entire e-commerce platform from scratch in 6 weeks. The quality of his code, his attention to detail, and his communication throughout the project were outstanding.",
     rating: 5,
   },
   {
     id: 3,
     name: "Yonas Bekele",
-    role: "Senior Engineer at iCog Labs",
+    role: "Senior Engineer at iCog Labs, Addis Ababa",
     avatar: "/testimonials/yonas.jpg",
     content:
-      "I had the pleasure of working alongside Damoze. They picked up new technologies incredibly fast and consistently delivered beyond expectations. Highly recommend.",
+      "I had the pleasure of working alongside Damoze. He picked up new technologies incredibly fast and consistently delivered beyond expectations. A promising young engineer — highly recommend.",
     rating: 5,
   },
 ];
@@ -333,7 +408,7 @@ export const stats = [
   { label: "Projects Completed", value: 25, suffix: "+" },
   { label: "Happy Clients", value: 15, suffix: "+" },
   { label: "GitHub Commits", value: 1200, suffix: "+" },
-  { label: "Cups of Coffee", value: 847, suffix: "" },
+  { label: "Litres of Water / Day", value: 2, suffix: "L" },
 ];
 
 export const navLinks = [

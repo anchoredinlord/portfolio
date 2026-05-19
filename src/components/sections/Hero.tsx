@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Download, Sparkles, Code2, Database } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
-import { personalInfo } from "@/lib/data";
+import { personalInfo, assets } from "@/lib/data";
 import Button from "@/components/ui/Button";
+import ProfileImage from "@/components/ui/ProfileImage";
 
 export default function Hero() {
   const handleScroll = (id: string) => {
@@ -111,7 +112,7 @@ export default function Hero() {
                 View Projects
               </Button>
               <Button
-                href={personalInfo.resumeUrl}
+                href={assets.resume}
                 variant="ghost"
                 size="lg"
                 className="text-gray-300 hover:text-white hover:bg-gray-800"
@@ -167,13 +168,12 @@ export default function Hero() {
               />
               {/* Ring border */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-br from-violet-500 to-indigo-500">
-                <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
-                  {/* Avatar placeholder — replace with actual image */}
-                  <div className="w-full h-full bg-gradient-to-br from-violet-900 to-indigo-900 flex items-center justify-center">
-                    <span className="text-7xl md:text-8xl font-bold text-white/20 select-none">
-                      {personalInfo.firstName[0]}{personalInfo.lastName[0]}
-                    </span>
-                  </div>
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <ProfileImage
+                    src={assets.heroPhoto}
+                    size={320}
+                    className="w-full h-full rounded-full"
+                  />
                 </div>
               </div>
 

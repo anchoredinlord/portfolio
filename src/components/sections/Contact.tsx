@@ -91,7 +91,7 @@ export default function Contact() {
                 Ready to build something great?
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Whether you&apos;re looking for a full-stack developer, need help with a project, or just want to connect — my inbox is always open.
+                Whether you and apos;re looking for a full-stack developer, need help with a project, or just want to connect — my inbox is always open.
               </p>
             </div>
 
