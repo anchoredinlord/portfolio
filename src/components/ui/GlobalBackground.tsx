@@ -113,7 +113,7 @@ function MatrixCanvas({ isDark }: { isDark: boolean }) {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ opacity: isDark ? 0.6 : 0.22 }}
+      style={{ opacity: isDark ? 0.6 : 0.08 }}
       aria-hidden="true"
     />
   );
@@ -241,9 +241,9 @@ export default function GlobalBackground() {
 
   const baseBg     = isDark
     ? "from-[#020617] via-[#050714] to-[#080b1a]"
-    : "from-slate-50 via-violet-50/40 to-indigo-50/30";
-  const gridC1     = isDark ? "rgba(124,58,237,0.25)" : "rgba(109,40,217,0.07)";
-  const gridC2     = isDark ? "rgba(6,182,212,0.08)"  : "rgba(8,145,178,0.04)";
+    : "from-white via-violet-50/20 to-indigo-50/10";
+  const gridC1     = isDark ? "rgba(124,58,237,0.25)" : "rgba(109,40,217,0.05)";
+  const gridC2     = isDark ? "rgba(6,182,212,0.08)"  : "rgba(8,145,178,0.03)";
   const binaryClr  = isDark ? "#7c3aed" : "#8b5cf6";
   const codeClrs   = isDark
     ? ["#7c3aed","#06b6d4","#10b981","#a78bfa"]
@@ -251,13 +251,13 @@ export default function GlobalBackground() {
   const hClrs      = isDark
     ? ["#7c3aed","#06b6d4","#10b981","#a78bfa"]
     : ["#6d28d9","#0891b2","#059669","#7c3aed"];
-  const orb1       = isDark ? "rgba(124,58,237,0.14)" : "rgba(139,92,246,0.06)";
-  const orb2       = isDark ? "rgba(6,182,212,0.09)"  : "rgba(6,182,212,0.04)";
+  const orb1       = isDark ? "rgba(124,58,237,0.14)" : "rgba(139,92,246,0.04)";
+  const orb2       = isDark ? "rgba(6,182,212,0.09)"  : "rgba(6,182,212,0.03)";
   const scanClr    = isDark
     ? "linear-gradient(90deg,transparent,rgba(124,58,237,0.4),rgba(6,182,212,0.4),transparent)"
-    : "linear-gradient(90deg,transparent,rgba(109,40,217,0.15),rgba(8,145,178,0.15),transparent)";
-  const overlay    = isDark ? "bg-gray-950/55" : "bg-white/58";
-  const svgOp      = isDark ? 0.13 : 0.14;
+    : "linear-gradient(90deg,transparent,rgba(109,40,217,0.08),rgba(8,145,178,0.08),transparent)";
+  const overlay    = isDark ? "bg-gray-950/55" : "bg-white/82";
+  const svgOp      = isDark ? 0.13 : 0.07;
 
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden"
@@ -284,7 +284,7 @@ export default function GlobalBackground() {
 
       {/* 4 — Horizontal lines (underlayer) */}
       <div className="absolute left-0 right-0 bottom-0 overflow-hidden"
-        style={{ top:"80px", opacity: isDark ? 0.11 : 0.05 }}>
+        style={{ top:"80px", opacity: isDark ? 0.11 : 0.03 }}>
         {H_LINES.map((l,i) => (
           <HLine key={i} {...l} color={hClrs[i % 4]}/>
         ))}
@@ -292,7 +292,7 @@ export default function GlobalBackground() {
 
       {/* 5 — Binary columns */}
       <div className="absolute left-0 right-0 bottom-0 overflow-hidden"
-        style={{ top:"80px", opacity: isDark ? 0.30 : 0.10 }}>
+        style={{ top:"80px", opacity: isDark ? 0.30 : 0.06 }}>
         {BINARY_COLS.map((c,i) => (
           <BinaryColumn key={i} {...c} color={binaryClr}/>
         ))}
@@ -300,7 +300,7 @@ export default function GlobalBackground() {
 
       {/* 6 — Vertical code lines */}
       <div className="absolute left-0 right-0 bottom-0 overflow-hidden"
-        style={{ top:"80px", opacity: isDark ? 0.18 : 0.07 }}>
+        style={{ top:"80px", opacity: isDark ? 0.18 : 0.05 }}>
         {CODE_LINES.map((l,i) => (
           <CodeLine key={i} {...l} color={codeClrs[i % 4]}/>
         ))}

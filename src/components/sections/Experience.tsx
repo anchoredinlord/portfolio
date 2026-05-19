@@ -18,7 +18,7 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="My Journey"
-          title="Experience & Achievements"
+          title="Experience and Achievements"
           subtitle="The milestones that have shaped my engineering career."
         />
 
