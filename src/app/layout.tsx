@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://damozemotuma.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-livid-omega.vercel.app"
   ),
   title: `${personalInfo.name} — Senior Software Engineer`,
   description: `${personalInfo.bio} Specializing in React, Next.js, Node.js, and PostgreSQL.`,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://damozemotuma.dev",
+    url: "https://portfolio-livid-omega.vercel.app",
     title: `${personalInfo.name} — Senior Software Engineer`,
     description: personalInfo.bio,
     siteName: `${personalInfo.name} Portfolio`,

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://damozemotuma.dev/sitemap.xml",
+    sitemap: "https://portfolio-livid-omega.vercel.app/sitemap.xml",
   };
 }
