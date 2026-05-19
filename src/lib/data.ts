@@ -166,8 +166,8 @@ export const projects = [
       "Built a production-grade academic management platform handling 10,000+ student records. Features include real-time grade tracking, automated report generation, attendance management, and a parent portal.",
     image: "/projects/academic.jpg",
     tags: ["React", "Node.js", "PostgreSQL", "Express", "JWT", "Tailwind CSS"],
-    github: "https://github.com/anchoredinlord/academic-record-system",
-    demo: "https://academic-system-demo.vercel.app",
+    github: "https://github.com/anchoredinlord/student-record-system",
+    demo: "https://github.com/anchoredinlord/student-record-system",
     featured: true,
     category: "Full-Stack",
     challenges: [
