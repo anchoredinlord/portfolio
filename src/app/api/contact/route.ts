@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { Resend } from "resend";
 
 const schema = z.object({
   name:    z.string().min(2),
@@ -9,13 +8,14 @@ const schema = z.object({
   message: z.string().min(20),
 });
 
-// Resend client — API key comes from environment variable
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const data = schema.parse(body);
+
+    // Lazy import — only runs at request time, not at build time
+    const { Resend } = await import("resend");
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     // ── Send email to YOU (Damoze) ──────────────────────────
     await resend.emails.send({
