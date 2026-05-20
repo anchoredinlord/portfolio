@@ -188,7 +188,7 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 bg-gray-900 border border-gray-700 rounded-2xl px-3 py-2 flex items-center gap-2 shadow-xl"
+                className="absolute -bottom-2 -left-4 bg-gray-900 border border-gray-700 rounded-2xl px-3 py-2 flex items-center gap-2 shadow-xl"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >
