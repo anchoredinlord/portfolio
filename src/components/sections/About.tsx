@@ -34,7 +34,7 @@ const passions = [
   { icon: Zap,           text: "Building scalable web applications" },
   { icon: Heart,         text: "Reading 2–3 pages per day" },
   { icon: GraduationCap, text: "Coding 2–3 hours per day" },
-  { icon: Briefcase,     text: "Mentoring junior developers" },
+  { icon: Briefcase,     text: "Open source contribution" },
 ];
 
 export default function About() {
