@@ -413,9 +413,9 @@ export const testimonials = [
   },
   {
     id: 5,
-    name: "Abebe Girma",
+    name: "Amenti Liban",
     role: "CEO at JIRU Tech, Ethiopia",
-    avatar: "/testimonials/abebe.jpg",
+    avatar: "/testimonials/amenti.jpg",
     content:
       "Damoze joined JIRU Tech as a Sales Finder and immediately made an impact. His ability to identify the right clients, understand their technical needs, and bridge the gap between our engineering team and potential customers was remarkable. He brought in several high-value clients within a short period and helped shape our go-to-market strategy. Beyond his sales instinct, his software engineering background gave him a unique edge — he could speak the language of both business and technology. A truly exceptional talent.",
     rating: 5,
