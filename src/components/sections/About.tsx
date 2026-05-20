@@ -32,8 +32,8 @@ const highlights = [
 
 const passions = [
   { icon: Zap,           text: "Building scalable web applications" },
-  { icon: Heart,         text: "Open source contribution" },
-  { icon: GraduationCap, text: "Continuous learning & growth" },
+  { icon: Heart,         text: "Reading 2–3 pages per day" },
+  { icon: GraduationCap, text: "Coding 2–3 hours per day" },
   { icon: Briefcase,     text: "Mentoring junior developers" },
 ];
 

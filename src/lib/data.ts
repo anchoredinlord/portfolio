@@ -402,6 +402,15 @@ export const testimonials = [
       "I had the pleasure of working alongside Damoze. He picked up new technologies incredibly fast and consistently delivered beyond expectations. A promising young engineer — highly recommend.",
     rating: 5,
   },
+  {
+    id: 4,
+    name: "Tigist Alemu",
+    role: "Co-Founder at StartLink Ethiopia — Client Finder Platform",
+    avatar: "/testimonials/tigist.jpg",
+    content:
+      "We brought Damoze on board to build the core of our Client Finder platform — a system that connects freelancers with businesses across Ethiopia. He delivered a robust, well-architected solution that exceeded our expectations. His professionalism, speed, and deep technical knowledge made him the best engineering decision we made as a startup. We continue to work with him to this day.",
+    rating: 5,
+  },
 ];
 
 export const stats = [
