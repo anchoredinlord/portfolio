@@ -25,15 +25,15 @@ export default function GlobalBackground() {
 
   const isDark = resolvedTheme !== "light";
 
-  // Emerald green — same as Database skills bar
+  // Emerald green — same as Database skills bar — bright and visible
   const lineColor = isDark ? "#10b981" : "#059669";
-  const lineOpacity = isDark ? 0.15 : 0.06;
+  const lineOpacity = isDark ? 0.55 : 0.25;
 
   const baseBg = isDark
     ? "from-[#020617] via-[#050714] to-[#080b1a]"
     : "from-white to-white";
 
-  const overlay = isDark ? "bg-gray-950/65" : "bg-white/90";
+  const overlay = isDark ? "bg-gray-950/50" : "bg-white/82";
 
   return (
     <div
