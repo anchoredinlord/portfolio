@@ -411,6 +411,15 @@ export const testimonials = [
       "We brought Damoze on board to build the core of our Client Finder platform — a system that connects freelancers with businesses across Ethiopia. He delivered a robust, well-architected solution that exceeded our expectations. His professionalism, speed, and deep technical knowledge made him the best engineering decision we made as a startup. We continue to work with him to this day.",
     rating: 5,
   },
+  {
+    id: 5,
+    name: "Abebe Girma",
+    role: "CEO at JIRU Tech, Ethiopia",
+    avatar: "/testimonials/abebe.jpg",
+    content:
+      "Damoze joined JIRU Tech as a Sales Finder and immediately made an impact. His ability to identify the right clients, understand their technical needs, and bridge the gap between our engineering team and potential customers was remarkable. He brought in several high-value clients within a short period and helped shape our go-to-market strategy. Beyond his sales instinct, his software engineering background gave him a unique edge — he could speak the language of both business and technology. A truly exceptional talent.",
+    rating: 5,
+  },
 ];
 
 export const stats = [
