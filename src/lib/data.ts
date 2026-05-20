@@ -426,7 +426,7 @@ export const stats = [
   { label: "Projects Completed", value: 25, suffix: "+" },
   { label: "Happy Clients", value: 15, suffix: "+" },
   { label: "GitHub Commits", value: 1200, suffix: "+" },
-  { label: "Litres of Water / Day", value: 2, suffix: "L" },
+  { label: "Years of Experience", value: 3, suffix: "+" },
 ];
 
 export const navLinks = [
