@@ -154,7 +154,7 @@ export default function Experience() {
                 <h4 className="font-bold mb-4">Quick Stats</h4>
                 <div className="space-y-3">
                   {[
-                    { label: "Years of Experience", value: "2+" },
+                    { label: "Years of Experience", value: "3+" },
                     { label: "Projects Delivered", value: "25+" },
                     { label: "Certifications", value: "4" },
                     { label: "Hackathons Won", value: "1" },

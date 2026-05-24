@@ -158,6 +158,31 @@ export const projects = [
     ],
   },
   {
+    id: 8,
+    title: "Inventory Tracker System",
+    description:
+      "A full-featured inventory management system for tracking stock levels, products, suppliers, and purchase orders — with real-time alerts for low stock and a powerful analytics dashboard.",
+    longDescription:
+      "Built a production-ready inventory tracking platform using Django REST Framework on the backend and React on the frontend. Supports multi-warehouse management, barcode scanning, automated reorder triggers, and detailed reporting.",
+    image: "/projects/inventory.jpg",
+    tags: ["Python", "Django", "Django REST Framework", "PostgreSQL", "React", "Tailwind CSS"],
+    github: "https://github.com/anchoredinlord/inventory-tracker",
+    demo: "https://inventory-tracker-demo.vercel.app",
+    featured: true,
+    category: "Backend",
+    challenges: [
+      "Designing a normalized schema for multi-warehouse stock tracking",
+      "Building real-time low-stock alert triggers with Django signals",
+      "Implementing barcode-based product lookup with fast query optimization",
+    ],
+    features: [
+      "Product & category management with barcode support",
+      "Multi-warehouse stock tracking and transfers",
+      "Automated low-stock alerts and reorder suggestions",
+      "Analytics dashboard with sales and inventory reports",
+    ],
+  },
+  {
     id: 1,
     title: "Student Academic Record Management System",
     description:

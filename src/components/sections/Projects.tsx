@@ -7,7 +7,7 @@ import { projects } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 
-const categories = ["All", "Full-Stack", "Frontend", "Database"];
+const categories = ["All", "Full-Stack", "Frontend", "Backend", "Database"];
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [expanded, setExpanded] = useState(false);

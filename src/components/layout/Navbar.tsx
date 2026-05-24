@@ -34,11 +34,17 @@ export default function Navbar() {
   }, []);
 
   const handleNavClick = (href: string) => {
-    setIsOpen(false);
     const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    if (isOpen) {
+      // Close the menu first, then scroll after the exit animation finishes
+      setIsOpen(false);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 350);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -62,7 +68,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.button
             onClick={() => handleNavClick("#home")}
-            className="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"
+            className="text-xl font-bold bg-linear-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -107,7 +113,7 @@ export default function Navbar() {
             <motion.a
               href={assets.resume}
               download
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-linear-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -159,7 +165,7 @@ export default function Navbar() {
               <a
                 href={assets.resume}
                 download
-                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold mt-2"
+                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-linear-to-r from-violet-600 to-indigo-600 text-white text-sm font-semibold mt-2"
               >
                 <Download size={14} />
                 Download Resume
