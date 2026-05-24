@@ -314,7 +314,7 @@ export const experience = [
     id: 1,
     role: "Senior Software Engineer",
     company: "Freelance — Ethiopia",
-    period: "2027 – Present",
+    period: "2026 – Present",
     type: "Freelance",
     description:
       "Delivering high-quality full-stack web applications for clients across Ethiopia. Managing full project lifecycle from requirements gathering to deployment and maintenance.",
