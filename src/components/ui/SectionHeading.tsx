@@ -33,22 +33,15 @@ export default function SectionHeading({
         </motion.div>
       )}
 
-      {/* Slide-in wrapper — runs once on enter */}
-      <motion.div
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white"
       >
-        {/* Breathe loop — runs forever after entry */}
-        <motion.h2
-          animate={{ opacity: [1, 0.55, 1] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="heading-gradient text-3xl md:text-4xl lg:text-5xl font-bold"
-        >
-          {title}
-        </motion.h2>
-      </motion.div>
+        {title}
+      </motion.h2>
 
       {subtitle && (
         <motion.p
@@ -61,6 +54,7 @@ export default function SectionHeading({
           {subtitle}
         </motion.p>
       )}
+
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}

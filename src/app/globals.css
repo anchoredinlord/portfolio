@@ -96,12 +96,4 @@ html { scroll-behavior: smooth; }
 }
 .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
 
-/* ── Section heading color ── */
-.heading-gradient {
-  color: rgb(17, 24, 39);
-}
-.dark .heading-gradient {
-  color: rgb(255, 255, 255);
-}
-
 main > * { position: relative; }
