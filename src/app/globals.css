@@ -109,13 +109,13 @@ html { scroll-behavior: smooth; }
 .heading-gradient {
   background: linear-gradient(
     135deg,
-    rgb(124,  58, 237)   0%,    /* violet-600   */
-    rgb( 16, 185, 129)  18%,    /* emerald-500  */
-    rgb(  6, 182, 212)  34%,    /* cyan-500     */
-    rgb(250, 204,  21)  50%,    /* yellow-400   */
-    rgb( 34, 211, 238)  66%,    /* cyan-400     */
-    rgb( 52, 211, 153)  82%,    /* emerald-400  */
-    rgb(124,  58, 237) 100%     /* violet-600   */
+    rgb(255, 255, 255)   0%,    /* pure white        */
+    rgb(209, 213, 219)  18%,    /* cool silver       */
+    rgb(243, 244, 246)  34%,    /* near white        */
+    rgb(251, 191,  36)  50%,    /* warm amber gold   */
+    rgb(229, 231, 235)  66%,    /* light gray        */
+    rgb(156, 163, 175)  82%,    /* medium gray       */
+    rgb(255, 255, 255) 100%     /* pure white        */
   );
   background-size: 400% 400%;
   -webkit-background-clip: text;
