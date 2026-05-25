@@ -49,7 +49,7 @@ export default function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 text-lg text-gray-700 dark:text-white max-w-2xl mx-auto"
+          className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
         >
           {subtitle}
         </motion.p>
