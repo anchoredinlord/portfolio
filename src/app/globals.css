@@ -96,32 +96,13 @@ html { scroll-behavior: smooth; }
 }
 .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
 
-/* ── Animated section heading gradient ── */
-@keyframes heading-flow {
-  0%   { background-position: 0% 50%; }
-  20%  { background-position: 40% 100%; }
-  40%  { background-position: 100% 50%; }
-  60%  { background-position: 60% 0%; }
-  80%  { background-position: 20% 80%; }
-  100% { background-position: 0% 50%; }
+/* ── Section heading — pure white dark / near-black light ── */
+.heading-gradient {
+  color: rgb(17, 24, 39); /* gray-900 in light mode */
 }
 
-.heading-gradient {
-  background: linear-gradient(
-    135deg,
-    rgb(255, 255, 255)   0%,    /* pure white        */
-    rgb(209, 213, 219)  18%,    /* cool silver       */
-    rgb(243, 244, 246)  34%,    /* near white        */
-    rgb( 96, 165, 250)  50%,    /* bright blue-400   */
-    rgb(229, 231, 235)  66%,    /* light gray        */
-    rgb(156, 163, 175)  82%,    /* medium gray       */
-    rgb(255, 255, 255) 100%     /* pure white        */
-  );
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: heading-flow 3s ease-in-out infinite;
+.dark .heading-gradient {
+  color: rgb(255, 255, 255); /* pure white in dark mode */
 }
 
 main > * { position: relative; }
