@@ -32,15 +32,24 @@ export default function SectionHeading({
           {badge}
         </motion.div>
       )}
-      <motion.h2
+
+      {/* Slide-in wrapper — runs once on enter */}
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="heading-gradient text-3xl md:text-4xl lg:text-5xl font-bold"
       >
-        {title}
-      </motion.h2>
+        {/* Breathe loop — runs forever after entry */}
+        <motion.h2
+          animate={{ opacity: [1, 0.55, 1] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          className="heading-gradient text-3xl md:text-4xl lg:text-5xl font-bold"
+        >
+          {title}
+        </motion.h2>
+      </motion.div>
+
       {subtitle && (
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +67,7 @@ export default function SectionHeading({
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.3 }}
         className={cn(
-          "mt-6 h-1 w-20 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full",
+          "mt-6 h-1 w-20 bg-linear-to-r from-violet-600 to-indigo-600 rounded-full",
           centered && "mx-auto"
         )}
       />

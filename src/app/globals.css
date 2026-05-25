@@ -96,19 +96,12 @@ html { scroll-behavior: smooth; }
 }
 .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
 
-/* ── Section heading — pure white with gentle opacity pulse ── */
-@keyframes heading-breathe {
-  0%,  100% { opacity: 1; }
-  50%        { opacity: 0.75; }
-}
-
+/* ── Section heading color ── */
 .heading-gradient {
-  color: rgb(17, 24, 39); /* near-black in light mode */
+  color: rgb(17, 24, 39);
 }
-
 .dark .heading-gradient {
-  color: rgb(255, 255, 255); /* pure white in dark mode */
-  animation: heading-breathe 3s ease-in-out infinite;
+  color: rgb(255, 255, 255);
 }
 
 main > * { position: relative; }
