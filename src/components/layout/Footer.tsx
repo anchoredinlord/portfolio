@@ -115,7 +115,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <p className="text-sm text-gray-600 flex items-center gap-1">
-              Built with <Heart size={12} className="text-red-500 fill-red-500 mx-1" /> using Next.js &amp; Tailwind CSS
+              Built with <Heart size={12} className="text-red-500 fill-red-500 mx-1" /> using Next.js and Tailwind CSS
             </p>
             {/* Scroll to top — always visible here */}
             <motion.button

@@ -7,7 +7,9 @@ import { projects } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
 
-const categories = ["All", "Full-Stack", "Frontend", "Backend", "Database"];
+// Derive filter tabs from actual project categories — no empty tabs
+const allCategories = Array.from(new Set(projects.map((p) => p.category)));
+const categories = ["All", ...allCategories];
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [expanded, setExpanded] = useState(false);
@@ -207,7 +209,7 @@ export default function Projects() {
         <SectionHeading
           badge="My Work"
           title="Featured Projects"
-          subtitle="A selection of projects that showcase my technical skills and problem-solving ability."
+          subtitle="Five projects spanning full-stack development, backend engineering, and AI integration."
         />
 
         {/* Filter tabs */}

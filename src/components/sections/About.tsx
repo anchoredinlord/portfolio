@@ -34,10 +34,10 @@ const highlights = [
 ];
 
 const passions = [
-  { icon: Zap,           text: "Building scalable web applications" },
-  { icon: Heart,         text: "3–4 hours reading per day" },
-  { icon: GraduationCap, text: "3–4 hours coding per day" },
-  { icon: Briefcase,     text: "Open source contribution" },
+  { icon: Zap,           text: "Full-stack web applications" },
+  { icon: Heart,         text: "Backend and API development" },
+  { icon: GraduationCap, text: "AI integration and local models" },
+  { icon: Briefcase,     text: "Database design and systems" },
 ];
 
 export default function About() {
@@ -47,7 +47,7 @@ export default function About() {
         <SectionHeading
           badge="About Me"
           title="Who I Am"
-          subtitle="A passionate engineer who loves building things that matter."
+          subtitle="A software engineering student passionate about building real software that works."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

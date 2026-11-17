@@ -3,25 +3,11 @@
 // ============================================================
 
 // ── ASSETS ────────────────────────────────────────────────────
-// Drop your files into the /public folder then update paths here.
-//
-//  Photos  →  public/images/avatar.jpg        (hero circle photo)
-//             public/images/about.jpg         (about section photo)
-//  CV/Docs →  public/documents/resume.pdf     (downloadable CV)
-//
-// Supported image formats: .jpg .jpeg .png .webp .avif
-// ──────────────────────────────────────────────────────────────
 export const assets = {
-  // ── Profile photos ──
-  // Set to null to show the initials placeholder instead of a broken image
-  heroPhoto:  "/images/avatar.png",  // ← your hero photo
-  aboutPhoto: "/images/about.png",   // ← your about photo
-
-  // ── Documents ──
-  resume:     "/documents/resume.pdf", // ← your CV/Resume PDF
-
-  // ── OG / SEO image ──
-  ogImage:    "/images/og-image.jpg",  // ← 1200×630 social preview image
+  heroPhoto:  "/images/avatar.png",
+  aboutPhoto: "/images/about.png",
+  resume:     "/documents/resume.pdf",
+  ogImage:    "/images/og-image.jpg",
 };
 
 export const personalInfo = {
@@ -32,20 +18,19 @@ export const personalInfo = {
   roles: [
     "Senior Software Engineer",
     "Full-Stack Developer",
-    "Database Engineer",
+    "Backend Developer",
+    "AI Integration Engineer",
     "Problem Solver",
-    "Open Source Contributor",
   ],
   email: "damozemotumaguyasa@gmail.com",
   phone: "094723693",
   location: "Ethiopia",
-  bio: "I'm a passionate Senior Software Engineer with expertise in building scalable web applications and robust database systems. I love turning complex problems into elegant, user-friendly solutions.",
-  about: `I'm a young and passionate Senior Software Engineer based in Ethiopia, with a deep love for software engineering and database systems. My journey started with curiosity about how things work under the hood — and that curiosity has never stopped driving me forward.
+  bio: "Passionate software engineer focused on full-stack development, backend systems, database design, and AI integration. I build maintainable, scalable software and love turning complex problems into clean solutions.",
+  about: `I'm a passionate software engineer based in Ethiopia with strong interests in full-stack development, backend engineering, database systems, and AI integration. My journey into software started with curiosity about how systems are built from the ground up — and that curiosity continues to drive everything I do.
 
-I am currently pursuing my Bachelor of Science in Software Engineering at Haramaya University (2024–2028). Alongside my studies, I have been building real-world full-stack applications using modern technologies like React, Next.js, Node.js, and PostgreSQL.
+I am currently pursuing my Bachelor of Science in Software Engineering at Haramaya University (2024–2028). Alongside my studies, I have completed five software projects and accumulated more than 200 GitHub commits — building real-world applications that cover the full stack, from database design and REST APIs to modern React frontends.
 
-I have competed in hackathons including the Cursor Hackathon, where I demonstrated my ability to build innovative solutions under pressure. All my professional experience has been gained right here in Ethiopia, working with local clients and contributing to the growing tech ecosystem. I'm always looking for opportunities to grow, collaborate, and build something meaningful.`,
-  // resumeUrl kept for backward compat — driven by assets.resume above
+I have a solid understanding of backend architecture, API development, database systems, and connecting AI models to Python applications using tools like Ollama. I value writing maintainable, well-structured code, working collaboratively, and continuously improving my craft as an engineer.`,
   resumeUrl: "/documents/resume.pdf",
   avatarUrl: "/images/avatar.png",
   github: "https://github.com/anchoredinlord",
@@ -62,133 +47,53 @@ export const education = [
     period: "2024 – 2028",
     gpa: "",
     description:
-      "Studying software engineering with focus on full-stack development, database systems, and algorithms at Haramaya University, Ethiopia.",
+      "Studying software engineering with a focus on full-stack development, database systems, backend architecture, and algorithms at Haramaya University, Ethiopia.",
     achievements: [
       "Software Engineering Student",
-      "Full-Stack Development Focus",
-      "Database Systems Specialization",
+      "Full-Stack Development",
+      "Database Systems",
+      "Backend Architecture",
     ],
   },
 ];
 
 export const skills = {
+  languages: [
+    { name: "Python",      level: 82 },
+    { name: "Java",        level: 72 },
+    { name: "JavaScript",  level: 90 },
+    { name: "PHP",         level: 70 },
+  ],
   frontend: [
-    { name: "React.js", level: 92 },
-    { name: "Next.js", level: 88 },
-    { name: "TypeScript", level: 85 },
-    { name: "JavaScript", level: 95 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "HTML/CSS", level: 95 },
+    { name: "React",       level: 85 },
+    { name: "Next.js",     level: 82 },
+    { name: "JavaScript",  level: 90 },
+    { name: "HTML / CSS",  level: 90 },
+    { name: "Tailwind CSS",level: 85 },
   ],
   backend: [
-    { name: "Node.js", level: 88 },
-    { name: "Express.js", level: 85 },
-    { name: "REST APIs", level: 90 },
-    { name: "GraphQL", level: 72 },
-    { name: "Python", level: 78 },
-  ],
-  database: [
-    { name: "PostgreSQL", level: 88 },
-    { name: "MySQL", level: 85 },
-    { name: "MongoDB", level: 80 },
-    { name: "Redis", level: 70 },
-    { name: "Prisma ORM", level: 82 },
+    { name: "Python",      level: 82 },
+    { name: "FastAPI",     level: 75 },
+    { name: "Java",        level: 72 },
+    { name: "PHP",         level: 70 },
+    { name: "REST APIs",   level: 85 },
   ],
   tools: [
-    { name: "Git & GitHub", level: 92 },
-    { name: "Docker", level: 75 },
-    { name: "Postman", level: 88 },
-    { name: "VS Code", level: 95 },
-    { name: "Figma", level: 72 },
-    { name: "Linux/CLI", level: 80 },
+    { name: "Git and GitHub", level: 88 },
+    { name: "Docker",       level: 72 },
+    { name: "VS Code",      level: 92 },
+    { name: "Kiro IDE",     level: 80 },
   ],
 };
 
 export const projects = [
   {
-    id: 6,
-    title: "SaaS Platform",
-    description:
-      "A full-featured Software-as-a-Service platform with subscription billing, user onboarding, feature gating, analytics dashboard, and a self-service admin panel.",
-    longDescription:
-      "Production-grade SaaS boilerplate and platform covering the full lifecycle — from user signup and Stripe subscription billing to role-based feature access, usage analytics, and an admin control panel.",
-    image: "/projects/saas.jpg",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Prisma", "Tailwind CSS"],
-    github: "https://github.com/anchoredinlord/saas-platform",
-    demo: "https://saas-demo.vercel.app",
-    featured: true,
-    status: "coming-soon",
-    category: "Full-Stack",
-    challenges: [
-      "Designing a scalable subscription and billing architecture",
-      "Implementing feature gating per subscription tier",
-      "Building a real-time usage analytics pipeline",
-    ],
-    features: [
-      "Stripe subscription billing with webhooks",
-      "Role-based feature access per plan tier",
-      "Admin dashboard with user & revenue analytics",
-      "Self-service onboarding and settings",
-    ],
-  },
-  {
-    id: 7,
-    title: "Multi-Tenant Management System",
-    description:
-      "An enterprise-grade multi-tenant architecture where each tenant gets isolated data, custom branding, and independent user management — all on a single shared infrastructure.",
-    longDescription:
-      "Built a robust multi-tenancy system supporting hundreds of organizations on one platform. Each tenant has isolated PostgreSQL schemas, custom domain support, and independent admin controls.",
-    image: "/projects/multitenant.jpg",
-    tags: ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "Redis", "Docker"],
-    github: "https://github.com/anchoredinlord/multi-tenant-system",
-    demo: "https://multitenant-demo.vercel.app",
-    featured: true,
-    status: "coming-soon",
-    category: "Full-Stack",
-    challenges: [
-      "Designing schema-per-tenant PostgreSQL isolation",
-      "Custom subdomain routing per tenant",
-      "Shared infrastructure with zero data leakage between tenants",
-    ],
-    features: [
-      "Schema-per-tenant database isolation",
-      "Custom subdomain and domain per tenant",
-      "Tenant-level admin and user management",
-      "Centralized super-admin dashboard",
-    ],
-  },
-  {
-    id: 8,
-    title: "Inventory Tracker System",
-    description:
-      "A full-featured inventory management system for tracking stock levels, products, suppliers, and purchase orders — with real-time alerts for low stock and a powerful analytics dashboard.",
-    longDescription:
-      "Built a production-ready inventory tracking platform using Django REST Framework on the backend and React on the frontend. Supports multi-warehouse management, barcode scanning, automated reorder triggers, and detailed reporting.",
-    image: "/projects/inventory.jpg",
-    tags: ["Python", "Django", "Django REST Framework", "PostgreSQL", "React", "Tailwind CSS"],
-    github: "https://github.com/anchoredinlord/inventory-tracker",
-    demo: "https://inventory-tracker-demo.vercel.app",
-    featured: true,
-    category: "Backend",
-    challenges: [
-      "Designing a normalized schema for multi-warehouse stock tracking",
-      "Building real-time low-stock alert triggers with Django signals",
-      "Implementing barcode-based product lookup with fast query optimization",
-    ],
-    features: [
-      "Product & category management with barcode support",
-      "Multi-warehouse stock tracking and transfers",
-      "Automated low-stock alerts and reorder suggestions",
-      "Analytics dashboard with sales and inventory reports",
-    ],
-  },
-  {
     id: 1,
     title: "Student Academic Record Management System",
     description:
-      "A comprehensive full-stack system for managing student records, grades, attendance, and academic performance with role-based access control for admins, teachers, and students.",
+      "A full-stack system for managing student records, grades, and attendance with role-based access control for admins, teachers, and students.",
     longDescription:
-      "Built a production-grade academic management platform handling 10,000+ student records. Features include real-time grade tracking, automated report generation, attendance management, and a parent portal.",
+      "Built a comprehensive academic management platform with real-time grade tracking, automated report generation, attendance management, and a multi-role authentication system.",
     image: "/projects/academic.jpg",
     tags: ["React", "Node.js", "PostgreSQL", "Express", "JWT", "Tailwind CSS"],
     github: "https://github.com/anchoredinlord/student-record-system",
@@ -196,115 +101,115 @@ export const projects = [
     featured: true,
     category: "Full-Stack",
     challenges: [
-      "Designed normalized database schema for complex academic relationships",
+      "Designed a normalized database schema for complex academic relationships",
       "Implemented role-based access control with JWT authentication",
-      "Built real-time notification system using WebSockets",
+      "Built automated PDF report generation for academic records",
     ],
     features: [
-      "Multi-role authentication (Admin, Teacher, Student, Parent)",
-      "Real-time grade and attendance tracking",
+      "Multi-role authentication (Admin, Teacher, Student)",
+      "Grade and attendance tracking",
       "Automated PDF report generation",
       "Analytics dashboard with charts",
     ],
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
+    title: "Inventory Tracker System",
     description:
-      "A modern, scalable e-commerce platform with product management, cart functionality, payment integration, and an admin dashboard for inventory management.",
+      "A full-featured inventory management system for tracking stock levels, products, and purchase orders — with low-stock alerts and an analytics dashboard.",
     longDescription:
-      "Full-featured e-commerce solution with Stripe payment integration, real-time inventory tracking, and a powerful admin dashboard. Handles thousands of concurrent users.",
-    image: "/projects/ecommerce.jpg",
-    tags: ["Next.js", "TypeScript", "MongoDB", "Stripe", "Tailwind CSS", "Redux"],
-    github: "https://github.com/anchoredinlord/ecommerce-platform",
-    demo: "https://ecommerce-demo.vercel.app",
+      "Built with Python and FastAPI on the backend and React on the frontend. Supports product management, stock tracking, and automated reorder alerts with a reporting dashboard.",
+    image: "/projects/inventory.jpg",
+    tags: ["Python", "FastAPI", "PostgreSQL", "React", "Tailwind CSS"],
+    github: "https://github.com/anchoredinlord/inventory-tracker",
+    demo: "https://github.com/anchoredinlord/inventory-tracker",
     featured: true,
-    category: "Full-Stack",
+    category: "Backend",
     challenges: [
-      "Optimized database queries for fast product search",
-      "Implemented secure payment processing with Stripe",
-      "Built responsive UI with complex state management",
+      "Designed a normalized database schema for multi-category stock tracking",
+      "Built automated low-stock alert triggers",
+      "Implemented fast product lookup with query optimization",
     ],
     features: [
-      "Product catalog with advanced filtering",
-      "Shopping cart and wishlist",
-      "Stripe payment integration",
-      "Admin dashboard with analytics",
+      "Product and category management",
+      "Stock level tracking and history",
+      "Automated low-stock alerts",
+      "Analytics dashboard with inventory reports",
     ],
   },
   {
     id: 3,
-    title: "Task Management Application",
+    title: "AI Chat Application",
     description:
-      "A collaborative project management tool with real-time updates, drag-and-drop task boards, team collaboration features, and productivity analytics.",
+      "A local AI chat application that connects Python to AI models using Ollama, enabling conversational AI responses without external API dependencies.",
     longDescription:
-      "Trello-inspired task management app with real-time collaboration, custom workflows, and detailed productivity insights. Used by 500+ teams.",
-    image: "/projects/taskmanager.jpg",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "DnD"],
-    github: "https://github.com/anchoredinlord/task-manager",
-    demo: "https://taskmanager-demo.vercel.app",
+      "Integrates locally hosted AI models with a Python backend via Ollama. Demonstrates AI model integration, API development, and building practical AI-powered tools.",
+    image: "/projects/ai-chat.jpg",
+    tags: ["Python", "Ollama", "FastAPI", "AI Integration", "REST API"],
+    github: "https://github.com/anchoredinlord/ai-chat-app",
+    demo: "https://github.com/anchoredinlord/ai-chat-app",
     featured: true,
-    category: "Full-Stack",
+    category: "Backend",
     challenges: [
-      "Real-time synchronization across multiple clients",
-      "Drag-and-drop with optimistic UI updates",
-      "Complex permission system for team workspaces",
+      "Integrating locally hosted AI models with a Python application",
+      "Managing model context and conversation history",
+      "Building a clean REST API layer over the AI backend",
     ],
     features: [
-      "Kanban board with drag-and-drop",
-      "Real-time collaboration via WebSockets",
-      "Team workspaces and permissions",
-      "Productivity analytics and reports",
+      "Local AI model integration via Ollama",
+      "Conversational context management",
+      "FastAPI REST backend",
+      "No external AI API dependency",
     ],
   },
   {
     id: 4,
-    title: "Database Management Dashboard",
+    title: "E-Commerce Platform",
     description:
-      "A visual database management tool that allows users to design schemas, run queries, visualize relationships, and monitor database performance metrics.",
+      "A modern e-commerce platform with product management, shopping cart, payment integration, and an admin dashboard for inventory management.",
     longDescription:
-      "Professional database management interface supporting PostgreSQL and MySQL. Features visual schema designer, query builder, and performance monitoring.",
-    image: "/projects/database.jpg",
-    tags: ["React", "Node.js", "PostgreSQL", "MySQL", "Chart.js", "TypeScript"],
-    github: "https://github.com/anchoredinlord/db-dashboard",
-    demo: "https://db-dashboard-demo.vercel.app",
-    featured: false,
-    category: "Database",
+      "Full-featured e-commerce solution covering product catalog, cart and checkout flow, payment integration, and an admin panel for managing products and orders.",
+    image: "/projects/ecommerce.jpg",
+    tags: ["Next.js", "JavaScript", "PostgreSQL", "Tailwind CSS"],
+    github: "https://github.com/anchoredinlord/ecommerce-platform",
+    demo: "https://github.com/anchoredinlord/ecommerce-platform",
+    featured: true,
+    category: "Full-Stack",
     challenges: [
-      "Building a visual schema designer from scratch",
-      "Secure query execution with SQL injection prevention",
-      "Real-time performance monitoring",
+      "Optimized database queries for fast product search and filtering",
+      "Built secure checkout and payment flow",
+      "Designed responsive UI with complex state management",
     ],
     features: [
-      "Visual schema designer",
-      "SQL query builder and executor",
-      "Performance monitoring dashboard",
-      "Data export in multiple formats",
+      "Product catalog with filtering",
+      "Shopping cart and checkout",
+      "Admin dashboard for product and order management",
+      "Responsive design",
     ],
   },
   {
     id: 5,
     title: "Developer Portfolio Website",
     description:
-      "This very portfolio — a premium, production-ready personal portfolio built with Next.js, TypeScript, Framer Motion, and Tailwind CSS.",
+      "This portfolio — a production-ready personal portfolio built with Next.js, TypeScript, Framer Motion, and Tailwind CSS.",
     longDescription:
-      "A showcase of modern web development practices including server-side rendering, smooth animations, dark/light mode, and SEO optimization.",
+      "Showcases modern web development practices including server-side rendering, smooth animations, dark/light mode, SEO optimization, and a contact form with email integration.",
     image: "/projects/portfolio.jpg",
-    tags: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/anchoredinlord/portfolio",
-    demo: "https://damozemotuma.dev",
+    tags: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
+    github: "https://github.com/anchoredinlord",
+    demo: "https://damozemotuma.vercel.app",
     featured: false,
-    category: "Frontend",
+    category: "Full-Stack",
     challenges: [
       "Smooth animations without performance degradation",
-      "Perfect Lighthouse scores across all metrics",
       "Accessible and SEO-optimized design",
+      "Contact form with server-side email integration",
     ],
     features: [
-      "Dark/Light mode toggle",
+      "Dark / Light mode toggle",
       "Framer Motion animations",
       "Contact form with email integration",
-      "GitHub API integration",
+      "Responsive layout for all screen sizes",
     ],
   },
 ];
@@ -312,154 +217,79 @@ export const projects = [
 export const experience = [
   {
     id: 1,
-    role: "Senior Software Engineer",
-    company: "Freelance — Ethiopia",
-    period: "2026 – Present",
-    type: "Freelance",
+    role: "Software Engineering Student",
+    company: "Haramaya University",
+    period: "2024 – Present",
+    type: "Education",
     description:
-      "Delivering high-quality full-stack web applications for clients across Ethiopia. Managing full project lifecycle from requirements gathering to deployment and maintenance.",
+      "Pursuing a Bachelor of Science in Software Engineering, building a strong foundation in software architecture, algorithms, database systems, and full-stack development.",
     achievements: [
-      "Delivered multiple projects with 100% client satisfaction",
-      "Built scalable systems handling thousands of concurrent users",
-      "Established long-term relationships with recurring Ethiopian clients",
+      "Completed 5 software development projects alongside coursework",
+      "Accumulated 200+ GitHub commits demonstrating consistent practice",
+      "Developed full-stack, backend, and AI integration projects",
     ],
-    technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    technologies: ["Python", "Java", "JavaScript", "React", "Next.js", "PostgreSQL"],
   },
   {
     id: 2,
-    role: "Hackathon Competitor",
-    company: "Cursor Hackathon",
-    period: "2026",
-    type: "Achievement",
-    description:
-      "Participated in the Cursor Hackathon, competing against talented developers worldwide. Built an innovative software solution leveraging AI-assisted development tools under time pressure.",
-    achievements: [
-      "Competed in the prestigious Cursor Hackathon",
-      "Built a fully functional project within the hackathon timeframe",
-      "Demonstrated ability to ship fast with modern AI-powered dev tools",
-    ],
-    technologies: ["React", "Node.js", "TypeScript", "Cursor AI", "Next.js"],
-  },
-  {
-    id: 3,
     role: "Full-Stack Developer",
-    company: "Various Projects — Ethiopia",
-    period: "2026 – Present",
-    type: "Internship",
+    company: "Personal Projects",
+    period: "2024 – Present",
+    type: "Projects",
     description:
-      "Designed and developed multiple full-stack applications for Ethiopian businesses including academic management systems, e-commerce platforms, and task management tools.",
+      "Independently designed and developed full-stack web applications covering frontend interfaces, backend APIs, database systems, and AI integration.",
     achievements: [
-      "Built 25+ production-ready web applications",
-      "Mastered modern full-stack technologies and best practices",
-      "Contributed to Ethiopia's growing software development community",
+      "Built a Student Academic Record Management System with role-based access",
+      "Built an Inventory Tracker using Python and FastAPI",
+      "Developed a local AI chat application using Ollama and Python",
     ],
-    technologies: ["React", "Next.js", "Node.js", "PostgreSQL", "MongoDB"],
-  },
-  {
-    id: 4,
-    role: "Technical Mentor and Leader",
-    company: "Developer Community — Ethiopia",
-    period: "2026 – Present",
-    type: "Leadership",
-    description:
-      "Actively mentoring junior developers in Ethiopia, sharing knowledge through code reviews, technical discussions, and community contributions.",
-    achievements: [
-      "Mentored multiple junior developers in Ethiopia",
-      "Shared technical knowledge through community engagement",
-      "Promoted best practices in software engineering",
-    ],
-    technologies: ["React", "Python", "Git", "Agile/Scrum", "TypeScript"],
-  },
-];
-
-export const certifications = [
-  {
-    name: "AWS Certified Developer – Associate",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    credentialUrl: "#",
-  },
-  {
-    name: "Meta Front-End Developer Certificate",
-    issuer: "Meta / Coursera",
-    date: "2023",
-    credentialUrl: "#",
-  },
-  {
-    name: "PostgreSQL for Everybody",
-    issuer: "University of Michigan",
-    date: "2022",
-    credentialUrl: "#",
-  },
-  {
-    name: "Docker Fundamentals",
-    issuer: "Docker Inc.",
-    date: "2023",
-    credentialUrl: "#",
-  },
-];
-
-export const testimonials = [
-  {
-    id: 1,
-    name: "Biruk Tadesse",
-    role: "CTO at Ethio Digital Solutions, Addis Ababa",
-    avatar: "/testimonials/biruk.jpg",
-    content:
-      "Damoze is one of the most talented young engineers I've worked with. His ability to understand complex requirements and deliver clean, scalable solutions is exceptional. A true asset to any team.",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "Selam Haile",
-    role: "Freelance Client — E-Commerce Project, Ethiopia",
-    avatar: "/testimonials/selam.jpg",
-    content:
-      "Damoze built our entire e-commerce platform from scratch in 6 weeks. The quality of his code, his attention to detail, and his communication throughout the project were outstanding.",
-    rating: 5,
+    technologies: ["React", "Next.js", "Python", "FastAPI", "PostgreSQL", "Tailwind CSS"],
   },
   {
     id: 3,
-    name: "Yonas Bekele",
-    role: "Senior Engineer at iCog Labs, Addis Ababa",
-    avatar: "/testimonials/yonas.jpg",
-    content:
-      "I had the pleasure of working alongside Damoze. He picked up new technologies incredibly fast and consistently delivered beyond expectations. A promising young engineer — highly recommend.",
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: "Tigist Alemu",
-    role: "Co-Founder at StartLink Ethiopia — Client Finder Platform",
-    avatar: "/testimonials/tigist.jpg",
-    content:
-      "We brought Damoze on board to build the core of our Client Finder platform — a system that connects freelancers with businesses across Ethiopia. He delivered a robust, well-architected solution that exceeded our expectations. His professionalism, speed, and deep technical knowledge made him the best engineering decision we made as a startup. We continue to work with him to this day.",
-    rating: 5,
-  },
-  {
-    id: 5,
-    name: "Amenti Liban",
-    role: "CEO at JIRU Tech, Ethiopia",
-    avatar: "/testimonials/amenti.jpg",
-    content:
-      "Damoze joined JIRU Tech as a Sales Finder and immediately made an impact. His ability to identify the right clients, understand their technical needs, and bridge the gap between our engineering team and potential customers was remarkable. He brought in several high-value clients within a short period and helped shape our go-to-market strategy. Beyond his sales instinct, his software engineering background gave him a unique edge — he could speak the language of both business and technology. A truly exceptional talent.",
-    rating: 5,
+    role: "AI Integration Developer",
+    company: "Personal Projects",
+    period: "2025 – Present",
+    type: "Projects",
+    description:
+      "Explored AI integration by connecting locally hosted AI models to Python applications using Ollama, building practical AI-powered tools and REST APIs.",
+    achievements: [
+      "Integrated local AI models into Python applications via Ollama",
+      "Built REST API layers for AI-powered conversational tools",
+      "Developed an understanding of AI model context management and API design",
+    ],
+    technologies: ["Python", "Ollama", "FastAPI", "REST APIs", "AI Integration"],
   },
 ];
+
+export const certifications: {
+  name: string;
+  issuer: string;
+  date: string;
+  credentialUrl: string;
+}[] = [];
+
+export const testimonials: {
+  id: number;
+  name: string;
+  role: string;
+  avatar: string;
+  content: string;
+  rating: number;
+}[] = [];
 
 export const stats = [
-  { label: "Projects Completed", value: 25, suffix: "+" },
-  { label: "Happy Clients", value: 15, suffix: "+" },
-  { label: "GitHub Commits", value: 1200, suffix: "+" },
-  { label: "Years of Experience", value: 3, suffix: "+" },
+  { label: "Projects Completed", value: 5,   suffix: "" },
+  { label: "GitHub Commits",     value: 200, suffix: "+" },
+  { label: "Full-Stack Projects",value: 3,   suffix: "" },
+  { label: "AI Integrations",    value: 1,   suffix: "+" },
 ];
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
+  { label: "Home",       href: "#home" },
+  { label: "About",      href: "#about" },
+  { label: "Skills",     href: "#skills" },
+  { label: "Projects",   href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact",    href: "#contact" },
 ];

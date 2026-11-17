@@ -193,7 +193,7 @@ export default function Hero() {
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >
                 <Database size={16} className="text-indigo-400" />
-                <span className="text-white text-xs font-semibold">DB Engineer</span>
+                <span className="text-white text-xs font-semibold">Backend Dev</span>
               </motion.div>
 
               <motion.div

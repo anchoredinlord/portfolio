@@ -6,10 +6,10 @@ import { skills } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const categoryConfig = {
-  frontend: { label: "Frontend", color: "from-violet-500 to-purple-500", bg: "bg-violet-50 dark:bg-violet-900/20", border: "border-violet-200 dark:border-violet-800/30" },
-  backend: { label: "Backend", color: "from-blue-500 to-cyan-500", bg: "bg-blue-50 dark:bg-blue-900/20", border: "border-blue-200 dark:border-blue-800/30" },
-  database: { label: "Database", color: "from-emerald-500 to-teal-500", bg: "bg-emerald-50 dark:bg-emerald-900/20", border: "border-emerald-200 dark:border-emerald-800/30" },
-  tools: { label: "Tools & DevOps", color: "from-orange-500 to-amber-500", bg: "bg-orange-50 dark:bg-orange-900/20", border: "border-orange-200 dark:border-orange-800/30" },
+  languages: { label: "Programming Languages", color: "from-violet-500 to-purple-500", bg: "bg-violet-50 dark:bg-violet-900/20", border: "border-violet-200 dark:border-violet-800/30" },
+  frontend:  { label: "Frontend Development",  color: "from-blue-500 to-cyan-500",     bg: "bg-blue-50 dark:bg-blue-900/20",     border: "border-blue-200 dark:border-blue-800/30" },
+  backend:   { label: "Backend Development",   color: "from-emerald-500 to-teal-500",  bg: "bg-emerald-50 dark:bg-emerald-900/20", border: "border-emerald-200 dark:border-emerald-800/30" },
+  tools:     { label: "Dev Tools",             color: "from-orange-500 to-amber-500",  bg: "bg-orange-50 dark:bg-orange-900/20",  border: "border-orange-200 dark:border-orange-800/30" },
 };
 
 function SkillBar({ name, level, color, index }: { name: string; level: number; color: string; index: number }) {
@@ -65,7 +65,7 @@ export default function Skills() {
         <SectionHeading
           badge="Technical Skills"
           title="My Tech Stack"
-          subtitle="Technologies I work with to build modern, scalable applications."
+          subtitle="Languages, frameworks, tools, and technologies I use to build software."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -115,10 +115,11 @@ export default function Skills() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "React", "Next.js", "TypeScript", "Node.js", "Express",
-              "PostgreSQL", "MongoDB", "MySQL", "Redis", "Docker",
-              "Git", "AWS", "Tailwind CSS", "GraphQL", "Prisma",
-              "Figma", "Postman", "Linux", "Python", "REST APIs"
+              "Python", "Java", "JavaScript", "PHP",
+              "React", "Next.js", "HTML / CSS", "Tailwind CSS",
+              "FastAPI", "REST APIs", "AI Integration", "Ollama",
+              "Git", "GitHub", "Docker", "VS Code", "Kiro IDE",
+              "PostgreSQL", "Database Design", "Backend Architecture"
             ].map((tech, i) => (
               <motion.span
                 key={tech}

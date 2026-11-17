@@ -9,6 +9,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
+  if (testimonials.length === 0) return null;
+
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
